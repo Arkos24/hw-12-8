@@ -22,3 +22,11 @@ pgrestore <название БД> > <Название дампа>
 
 
 
+### Задание 3
+В зависимости от подтипа инкрементного копирования команда может отличаться, вот пример с использованием последней успешной LNS записи:
+
+mysqlbackup --defaults-file=/home/dbadmin/my.cnf \
+  --incremental --incremental-base=history:last_backup \
+  --backup-dir=/home/dbadmin/temp_dir \
+  --backup-image=incremental_image1.bi \
+   backup-to-image
